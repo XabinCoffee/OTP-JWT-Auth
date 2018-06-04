@@ -12,6 +12,15 @@ module.exports = function(req, res) {
     .getUser(phone)
     .then(userRecord => {
       const code = Math.floor(Math.random() * 8999 + 1000);
+
+      // Note:
+      // SEND THE VERIFICATION CODE TO THE USER
+      // VIA EMAIL, SMS OR WHATEVER.
+      // SKIPPING THIS BECAUSE IT'S PRETTY STRAIGHTFORWARD
+      // OWN IMPLEMENTATION GOES HERE:
+
+
+      // AFTER the code has been [[SUCCESSFULLY]] sent, save it to the DB
       admin
         .database()
         .ref("users/" + phone)
